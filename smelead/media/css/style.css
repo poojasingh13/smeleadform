@@ -455,6 +455,7 @@ body {    font-family: 'Open Sans', sans-serif; font-size:12px;
   width: 1.2em;
   height: 1.2em;
   margin: 0 1em 0 0;
+    float:left;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
