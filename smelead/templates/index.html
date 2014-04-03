@@ -1,30 +1,137 @@
-<!doctype html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    {% block meta %}<meta charset="utf-8">{% endblock meta %}
-    <title>{% block title %}{% endblock title %}</title>
-    
-        <!--[if lt IE 9]>
-<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
-    
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{MEDIA_URL}}css/style.css" type="text/css" media="all" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+		<script src="{{MEDIA_URL}}js/slippry.min.js"></script>
+		<meta name="viewport" content="width=device-width">
+
+<title>Crisil</title>
 </head>
 <body>
-<div class="container">
+<div class="cointainer_top">
+<div class="cointainer_inside"><img src="{{MEDIA_URL}}images/crisil_logo.png" width="195" height="57" alt="" />
+<div class="clear"></div>
+<section class="demo_wrapper">
+			<article class="demo_block">
+				
+			<ul id="demo1">
+				<li><a href="#slide1"><img src="{{MEDIA_URL}}images/image1.png" ></a></li>
+				<li><a href="#slide2"><img src="{{MEDIA_URL}}images/image1.png"> </a></li>
+				<li><a href="#slide3"><img src="{{MEDIA_URL}}images/image3.png"></a></li>
+			</ul>
+			</article>
+		</section>		        
 
-<form id="id_leadform" method='post' action='/smelead/'>
- {% csrf_token %}
-Name:{{form.name}}
-Organistion:{{form.organisation}}
-City:{{form.city}}
-Email:{{form.emailId}}
-contactno:{{form.contactno}}
-<input type="submit" value="submit"/>  
-</form>
+<div class="top_right">Want to know more<br />
+get your SME rated?
+  <br />
+<em>  Call us Now!</em><br />
+  <strong>+1800-103-3453</strong><br />
+  Monday to Friday<br />
+9.30am-6.30pm</div>
+<br />
 
 </div>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+
+
+</div>
+
+
+
+<div class="cointainer_inside">
+<article class="text_des"><p>CRISIL provides the widest range of ratings in India and has rated and assessed 60,000 MSMEs, which is by far the highest number anywhere in the world. Several of India's largest companies use our customised SME assessment services to evaluate their vendors, dealers, distributors, and franchisees.
+</p>
+<strong>Get the CRISIL SME Ratings Advantage today!</strong>
+How can CRISIL SME Ratings give your business an edge?
+<ul>
+<li> A good rating from CRISIL carries weight with lenders
+</li>
+<li>It helps build credibility of your business and gain confidence of business partners
+</li>
+
+</ul>
+
+</article>
+
+
+<div class="bottom_mid">
+<div class="cicleRed">Apply for<br />
+CRISIL SME rating <br />
+and <br />
+
+dowload the crisil <br />
+
+sme report now</div>
+
+<img src="{{MEDIA_URL}}images/halloffame.gif" width="179" height="173" alt="" /> Get your SME Rated Today and 
+Get featured on the CRISIL Hall of Fame</div>
+
+<div class="form_right"><strong>Get SME Rating for Your 
+Company NOW!</strong>
+<form id="id_leadform" method='post' action='/smelead/'>
+ {% csrf_token %}
+<span>Name :</span>{{form.name}}
+<span>Organistion:</span>{{form.organisation}}
+<span>City:</span>{{form.city}}
+<span>Email:</span>{{form.emailId}}
+<span>contactno:</span>{{form.contactno}}
+<input type="submit" value=""/>  
+</form>
+
+
+</div>
+</div>
+
+
+<script>
+			$(function() {
+				var demo1 = $("#demo1").slippry({
+					transition: 'fade',
+					useCSS: true,
+					speed: 1000,
+					pause: 3000,
+					auto: true,
+					preload: 'visible'
+				});
+
+				$('.stop').click(function () {
+					demo1.stopAuto();
+				});
+
+				$('.start').click(function () {
+					demo1.startAuto();
+				});
+
+				$('.prev').click(function () {
+					demo1.goToPrevSlide();
+					return false;
+				});
+				$('.next').click(function () {
+					demo1.goToNextSlide();
+					return false;
+				});
+				$('.reset').click(function () {
+					demo1.destroySlider();
+					return false;
+				});
+				$('.reload').click(function () {
+					demo1.reloadSlider();
+					return false;
+				});
+				$('.init').click(function () {
+					demo1 = $("#demo1").slippry();
+					return false;
+				});
+			});
+		</script>
+
+
+<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>-->
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){

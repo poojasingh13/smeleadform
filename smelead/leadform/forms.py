@@ -5,5 +5,5 @@ class smeleadForm(forms.Form):
 	organisation= forms.CharField(max_length=200)
 	city= forms.CharField(max_length=200)
 	emailId= forms.EmailField()
-	contactno= forms.CharField(max_length=200)
+	contactno= forms.CharField(max_length=15)
     
