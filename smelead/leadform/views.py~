@@ -1,0 +1,22 @@
+from django.shortcuts import render
+from django.template import RequestContext
+from django.shortcuts import render_to_response
+from django.http import HttpResponse
+from leadform.forms import smeleadForm
+from leadform.models import leadform
+import json
+
+def index(request):
+    form = smeleadForm();
+    if request.method =='POST':
+	form =smeleadForm(request.POST)
+	if form.is_valid():
+		name = form.cleaned_data['name']
+		organisation=form.cleaned_data['organisation']
+		city =form.cleaned_data['city']
+		emailId=form.cleaned_data['emailId']
+		contactno =form.cleaned_data['contactno']
+		leadform(name=name,organisation=organisation,city=city,emailId=emailId,contactno=contactno).save()
+		return HttpResponse(json.dumps({'status':1}), mimetype='application/json')
+                	
+    return render_to_response('index.html', {'form':form},context_instance=RequestContext(request))
