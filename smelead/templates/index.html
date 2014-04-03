@@ -67,9 +67,11 @@ and <br />
 dowload the crisil <br />
 
 sme report now</div>
-
-<img src="{{MEDIA_URL}}images/halloffame.gif" width="179" height="173" alt="" /> Get your SME Rated Today and 
-Get featured on the CRISIL Hall of Fame</div>
+<a href="http://www.crisil.com/ratings/hall-of-fame.html" target="_blank">
+	<img style="border:0px" src="{{MEDIA_URL}}images/halloffame.gif" width="179" height="173" alt="" /> Get your SME Rated Today and 
+Get featured on the CRISIL Hall of Fame
+</a>
+</div>
 
 <div class="form_right"><strong>Get SME Rating for Your 
 Company NOW!</strong>
@@ -186,7 +188,9 @@ $(document).ready(function(){
                 data: serializedData
         }).done(function (response, textStatus, jqXHR) {                
                 if(response.status==1)
-               { alert("success awesome");}
+               { alert("Your information submitted  successfully");
+					$('#id_leadform').find('input').val('');
+			   }
               
         });
 
